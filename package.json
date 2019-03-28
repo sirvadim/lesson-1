@@ -8,6 +8,7 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -16,10 +17,26 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx,json,css}": [
+      "prettier --write --no-semi --single-quote --trailing-comma=all --print-width=80",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4"
+  }
 }
