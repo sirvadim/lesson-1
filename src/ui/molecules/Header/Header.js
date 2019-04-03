@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import { styled } from '@ui/theme'
 import { IconBack, IconClose } from '@ui/atoms'
 import { HLevel4 } from '@ui/atoms/Typography'
 

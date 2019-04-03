@@ -1,5 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
+import { styled } from '@ui/theme'
 
 export const HLevel4 = styled.div`
   font-size: 18px;
