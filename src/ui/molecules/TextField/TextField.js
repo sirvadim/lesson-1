@@ -77,9 +77,7 @@ export const TextField = ({
   }
   return (
     <Container>
-      <FormLabel valid={valid} disabled={disabled}>
-        {label}
-      </FormLabel>
+      <FormLabel valid={valid}>{label}</FormLabel>
       <HBox height={theme.paddings.half} />
       <FieldContainer focused={focused} error={error}>
         {startAdornment ? (
