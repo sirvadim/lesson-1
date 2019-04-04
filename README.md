@@ -15,7 +15,8 @@
 ### Дополнительные задания
 
 - самостоятельно разбить на компоненты и реализовать 4 страницу в сторибуке
-- подключить аддон withInfo
+- подключить storybook addon withInfo
+- сделать deploy storybook на github pages
 
 Дизайн:
 https://www.figma.com/file/Dgu3rgO2gUHYxo5p68qAZE/trainee?node-id=3353%3A179
