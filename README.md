@@ -33,3 +33,41 @@ https://medium.com/%D0%B0%D1%82%D0%BE%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9-%D0%B4
 Понедельник, 8 апреля, 12:00 KGD
 
 # Процесс выполнения
+
+## Декомпозиция
+
+настройка linter и prettier ±1 час
+
+Loader
+component ±15 min
+story ±25 min
+animation ±15 min
+
+RequestStatus
+component ±15 min
+story ±25 min
+
+SelectField
+component ±30 min
+story ±20 min
+
+TextareaField
+component ±30 min
+story ±20 min
+
+CheckboxWithText
+component ±30 min
+story ±20 min
+
+DeliveryTime
+component ±30 min
+story ±20 min
+
+story страница 2 ±1.5 часа
+story страница 3 ±2.5 часа
+
+подключить storybook addon withInfo ±30 min
+сделать deploy storybook на github pages ±30 min
+
+Компонент счетчика ±50 min
+самостоятельно разбить на компоненты и реализовать 4 страницу в сторибуке ±3 часа
