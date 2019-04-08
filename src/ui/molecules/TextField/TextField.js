@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { HBox, VBox, IconSuccess } from '@ui/atoms'
-import { InputError, InputTip } from '@ui/atoms/Typography'
+import {
+  InputError,
+  InputTip,
+  InputSuccess,
+  ValidationError,
+  LoadingText,
+} from '@ui/atoms/Typography'
 import { FormLabel, FormAdornment, Loader } from '@ui/molecules'
 import { styled, theme } from '@ui/theme'
 
 const Container = styled.div`
-  height: 88px;
   display: flex;
   flex-direction: column;
 `
@@ -61,6 +66,9 @@ export const TextField = ({
   onChange,
   onBlur,
   onFocus,
+  success,
+  unknownError,
+  loadingMessage,
 }) => {
   const [focused, setFocused] = useState(false)
   const handleFocus = e => {
@@ -95,17 +103,29 @@ export const TextField = ({
         />
         <FormAdornment>
           <Loader loading={status === 'loading'} color={theme.pallete.gray2} />
-          {status === 'success' ? <IconSuccess /> : null}
+          {status === 'success' ? (
+            <div>
+              <IconSuccess />
+              <VBox width={theme.paddings.double} />
+            </div>
+          ) : null}
         </FormAdornment>
       </FieldContainer>
-      <HBox height={theme.paddings.half} />
+      <HBox height={theme.paddings.double} />
       {error ? <InputError>{error}</InputError> : <InputTip>{tip}</InputTip>}
+      {status === 'error' ? (
+        <ValidationError>{unknownError}</ValidationError>
+      ) : null}
+      {status === 'success' ? <InputSuccess>{success}</InputSuccess> : null}
+      {status === 'loading' ? (
+        <LoadingText>{loadingMessage}</LoadingText>
+      ) : null}
     </Container>
   )
 }
 
 TextField.propTypes = {
-  status: PropTypes.oneOf(['loading', 'success']),
+  status: PropTypes.oneOf(['loading', 'success', 'error']),
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   label: PropTypes.string,
@@ -114,7 +134,9 @@ TextField.propTypes = {
   tip: PropTypes.string,
   valid: PropTypes.bool,
   startAdornment: PropTypes.node,
-
+  success: PropTypes.string,
+  loadingMessage: PropTypes.string,
+  unknownError: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
