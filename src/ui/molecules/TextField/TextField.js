@@ -105,7 +105,7 @@ export const TextField = ({
           <Loader loading={status === 'loading'} color={theme.pallete.gray2} />
           {status === 'success' ? (
             <div>
-              <IconSuccess />
+              <IconSuccess color={'#222'} />
               <VBox width={theme.paddings.double} />
             </div>
           ) : null}
